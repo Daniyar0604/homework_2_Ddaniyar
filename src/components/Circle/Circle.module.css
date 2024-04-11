@@ -1,1 +1,19 @@
-
+.Circle {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+  
+.Circle p {
+    font-size: 24px;
+    color: #333;
+}
+button {
+    padding: 10px 10px;
+    background-color: #ddd;
+}
