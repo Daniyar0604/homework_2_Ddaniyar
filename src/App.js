@@ -18,7 +18,31 @@ class App extends Component {
     ]
   }
 
-
+  changeNumber = () => {
+    console.log('Click');
+    const numbersCopy = this.state.numbers;
+    numbersCopy[0].number = this.random(5, 36);
+    numbersCopy[1].number = this.random(5, 36);
+    numbersCopy[2].number = this.random(5, 36);
+    numbersCopy[3].number = this.random(5, 36);
+    numbersCopy[4].number = this.random(5, 36);
+  
+    for (let i = 0; i < numbersCopy.length; i++) {
+      for (let j = i + 1; j < numbersCopy.length; j++) {
+        while (numbersCopy[i].number === numbersCopy[j].number) {
+         numbersCopy[j].number = this.random(5, 36) 
+        };
+      };
+    };
+  
+    const comparer = (a, b) => {
+      return a.number - b.number
+    };
+  
+    numbersCopy.sort(comparer);
+  
+    this.setState({numbers: numbersCopy});
+  }
 
   render() {
     return (
